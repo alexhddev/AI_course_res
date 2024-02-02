@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/emb/similar.ts"
+    "start": "node -r ts-node/register --env-file=.env src/emb/project/MovieRecommender.ts"
   },
   "keywords": [],
   "author": "",
