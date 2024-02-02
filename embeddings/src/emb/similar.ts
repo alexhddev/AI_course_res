@@ -1,4 +1,4 @@
-import { DataWithEmbeddings, generateEmbeddings, loadJSONData } from "./data";
+import { DataWithEmbeddings, generateEmbeddings, loadJSONData } from "./main";
 
 function dotProduct(a: number[], b: number[]) {
     return a.map((value, index) => value * b[index]).reduce((a, b) => a + b, 0);
@@ -12,9 +12,9 @@ function cosineSimilarity(a: number[], b: number[]) {
 }
 
 async function main() {
-    const dataWithEmbeddings = loadJSONData<DataWithEmbeddings[]>('dataWithEmbeddings.json')
+    const dataWithEmbeddings = loadJSONData<DataWithEmbeddings[]>('dataWithEmbeddings2.json')
 
-    const input = 'animal';
+    const input = 'How old is John?';
 
     const inputEmbedding = await generateEmbeddings(input);
 
@@ -24,7 +24,7 @@ async function main() {
     }[] = [];
 
     for (const entry of dataWithEmbeddings) {
-        const similarity = cosineSimilarity(
+        const similarity = dotProduct(
             entry.embedding,
             inputEmbedding.data[0].embedding
         )
@@ -40,3 +40,5 @@ async function main() {
         console.log(`${similarity.input}: ${similarity.similarity}`);
     })
 }
+
+main();
