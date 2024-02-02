@@ -4,21 +4,20 @@ import { join } from 'path';
 
 const openai = new OpenAI();
 
-type DataWithEmbeddings = {
+export type DataWithEmbeddings = {
     input: string,
     embedding: number[]
 }
 
-async function generateEmbeddings(input: string| string[]){
+export async function generateEmbeddings(input: string| string[]){
     const response = await openai.embeddings.create({
         input: input,
         model: 'text-embedding-3-small'
     })
-    console.log(response.data[0].embedding)
     return response;
 }
 
-function loadJSONData<T>(fileName: string):T{
+export function loadJSONData<T>(fileName: string):T{
     const path = join(__dirname, fileName);
     const rawData = readFileSync(path);
     return JSON.parse(rawData.toString());
