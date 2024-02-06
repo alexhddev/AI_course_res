@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/chroma/Client.ts"
+    "start": "node -r ts-node/register --env-file=.env src/chroma/RelevantInfo.ts"
   },
   "keywords": [],
   "author": "",
