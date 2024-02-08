@@ -1,7 +1,7 @@
 import { Pinecone } from '@pinecone-database/pinecone';
 
 const pc = new Pinecone({
-  apiKey: process.env.PINECONE_KEY!
+	apiKey: process.env.PINECONE_KEY!
 });
 
 // string value
@@ -10,70 +10,70 @@ const pc = new Pinecone({
 // metadata - more info
 
 type CoolType = {
-  coolness: number;
-  reference: string;
+	coolness: number;
+	reference: string;
 }
 
 // namespace: partition vectors from an index into smaller groups. Make operations limited to one namespace
 async function createNamespace() {
-  const index = getIndex();
-  const namespace = index.namespace('cool-namespace')
+	const index = getIndex();
+	const namespace = index.namespace('cool-namespace')
 }
 
 function getIndex() {
-  const index = pc.index<CoolType>('cool-index')
-  return index;
+	const index = pc.index<CoolType>('cool-index')
+	return index;
 }
 
 async function listIndexes() {
-  const result = await pc.listIndexes();
-  console.log(result)
+	const result = await pc.listIndexes();
+	console.log(result)
 }
 
 function generateNumberArray(length: number) {
-  return Array.from({ length }, () => Math.random());
+	return Array.from({ length }, () => Math.random());
 }
 
 async function upsertVectors() {
-  const embedding = generateNumberArray(1536);
-  const index = getIndex();
+	const embedding = generateNumberArray(1536);
+	const index = getIndex();
 
-  const upsertResult = await index.upsert([{
-    id: 'id-1',
-    values: embedding,
-    metadata: {
-      coolness: 3,
-      reference: 'abdc'
-    }
-  }])
+	const upsertResult = await index.upsert([{
+		id: 'id-1',
+		values: embedding,
+		metadata: {
+			coolness: 3,
+			reference: 'abdc'
+		}
+	}])
 }
 
-async function queryVectors(){
-  const index = getIndex();
-  const result = await index.query({
-    id: 'id-1',
-    topK: 1,
-    includeMetadata: true
-  });
-  console.log(result)
+async function queryVectors() {
+	const index = getIndex();
+	const result = await index.query({
+		id: 'id-1',
+		topK: 1,
+		includeMetadata: true
+	});
+	console.log(result)
 }
 
 async function createIndex() {
-  await pc.createIndex({
-    name: 'cool-index',
-    dimension: 1536,
-    metric: 'cosine',
-    spec: {
-      serverless: {
-        cloud: 'aws',
-        region: 'us-west-2'
-      }
-    }
-  })
+	await pc.createIndex({
+		name: 'cool-index',
+		dimension: 1536,
+		metric: 'cosine',
+		spec: {
+			serverless: {
+				cloud: 'aws',
+				region: 'us-west-2'
+			}
+		}
+	})
 }
 
 async function main() {
-  await queryVectors()
+	await queryVectors()
 }
 
 main();
