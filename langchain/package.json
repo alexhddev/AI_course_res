@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/PromptTemplates.ts"
+    "start": "node -r ts-node/register --env-file=.env src/OutputParsers.ts"
   },
   "keywords": [],
   "author": "",
