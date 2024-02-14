@@ -1,26 +1,27 @@
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { MemoryVectorStore } from 'langchain/vectorstores/memory'
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { CheerioWebBaseLoader } from 'langchain/document_loaders/web/cheerio';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
+import { PDFLoader } from 'langchain/document_loaders/fs/pdf'
 
 const model = new ChatOpenAI({
     modelName: 'gpt-3.5-turbo',
     temperature: 0.7,
 });
 
-const question = "What are langchain libraries?";
+const question = "What themes does Gone with the Wind explore?";
 
 async function main() {
 
     // create the loader:
-    const loader = new CheerioWebBaseLoader('https://js.langchain.com/docs/get_started/introduction');
+    const loader = new PDFLoader('books.pdf', {
+        splitPages: false
+    });
     const docs = await loader.load();
 
     // split the docs:
     const splitter = new RecursiveCharacterTextSplitter({
-        chunkSize: 200,
-        chunkOverlap: 20
+        separators: [`. \n`]
     });
 
     const splittedDocs = await splitter.splitDocuments(docs);

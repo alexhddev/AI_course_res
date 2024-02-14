@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/rag/Web.ts"
+    "start": "node -r ts-node/register --env-file=.env src/rag/Pdf.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "langchain": "^0.1.17"
+    "langchain": "^0.1.17",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
