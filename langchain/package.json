@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/rag/Pdf.ts"
+    "start": "node -r ts-node/register --env-file=.env src/rag/ChromaPdf.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "chromadb": "^1.8.1",
     "langchain": "^0.1.17",
     "pdf-parse": "^1.1.1"
   },
