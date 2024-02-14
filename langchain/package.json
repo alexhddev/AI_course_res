@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/OutputParsers.ts"
+    "start": "node -r ts-node/register --env-file=.env src/rag/Basic.ts"
   },
   "keywords": [],
   "author": "",
