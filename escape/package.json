@@ -2,9 +2,10 @@
   "name": "escape",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/index.ts"
+    "start": "node --loader ts-node/esm --no-warnings=ExperimentalWarning  --env-file=.env src/transformers.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@huggingface/inference": "^2.6.4",
     "@types/node": "^20.11.17",
+    "@xenova/transformers": "^2.15.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
