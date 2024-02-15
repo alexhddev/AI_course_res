@@ -13,4 +13,38 @@ async function embed() {
 
     console.log(output)    
 }
-embed()
+
+async function translate() {
+    const result = await inference.translation({
+        model: 't5-base',
+        inputs: 'How is the weather in Paris?'
+    })
+    console.log(result)
+}
+
+async function translate2() {
+    const result = await inference.translation({
+        model: 'facebook/nllb-200-distilled-600M',
+        inputs: 'How is the weather in Paris?',
+        //@ts-ignore
+        parameters: {
+            src_lang: 'eng-Latn',
+            tgt_lang: 'spaa_Latn'
+        }
+    })
+    console.log(result)
+}
+
+async function answerQuestion() {
+    const result = await inference.questionAnswering({
+        inputs: {
+            context: 'The quick brown fox jumps over the lazy dog',
+            question: 'What color is the fox?',
+            // question: 'Is the dog lazy?',
+            //question: 'What is the meaning of life?'
+        }
+    })
+    console.log(result);
+}
+
+answerQuestion()
