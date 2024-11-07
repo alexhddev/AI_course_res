@@ -86,7 +86,7 @@ async function queryEmbeddings(question: string){
 
 async function askOpenAI(question: string, relevantInfo: string){
     const response = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o',
         temperature: 0,
         messages: [{
             role: 'assistant',
