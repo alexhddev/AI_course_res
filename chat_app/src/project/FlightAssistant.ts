@@ -31,7 +31,7 @@ const context: OpenAI.Chat.ChatCompletionMessageParam[] = [
 
 async function callOpenAIWithFunctions() {
     const response = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo-0613',
+        model: 'gpt-4o',
         messages: context,
         temperature: 0.0,
         tools: [
@@ -111,7 +111,7 @@ async function callOpenAIWithFunctions() {
     }
 
     const secondCallResponse = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo-0613',
+        model: 'gpt-4o',
         messages: context,
     });
     console.log(secondCallResponse.choices[0].message);
