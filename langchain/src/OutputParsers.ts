@@ -4,7 +4,7 @@ import { StringOutputParser, CommaSeparatedListOutputParser } from '@langchain/c
 import { StructuredOutputParser } from 'langchain/output_parsers'
 
 const model = new ChatOpenAI({
-    modelName: 'gpt-3.5-turbo',
+    modelName: 'gpt-4o',
     temperature: 0.7,
 })
 
