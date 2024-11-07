@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import { encoding_for_model } from 'tiktoken';
 
 const openai = new OpenAI();
-const encoder = encoding_for_model('gpt-3.5-turbo');
+const encoder = encoding_for_model('gpt-4o');
 
 const MAX_TOKENS = 700;
 
@@ -13,7 +13,7 @@ const context:OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [{
 
 async function createChatCompletion() {
     const response = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4o',
         messages: context
     })
     const responseMessage = response.choices[0].message;
