@@ -44,3 +44,5 @@ async function main(){
     saveDataToJsonFile(dataWithEmbeddings, 'dataWithEmbeddings2.json')
 }
 
+main();
+
