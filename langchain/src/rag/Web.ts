@@ -1,11 +1,11 @@
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { MemoryVectorStore } from 'langchain/vectorstores/memory'
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { CheerioWebBaseLoader } from 'langchain/document_loaders/web/cheerio';
+import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/cheerio';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
 const model = new ChatOpenAI({
-    modelName: 'gpt-3.5-turbo',
+    modelName: 'gpt-4o',
     temperature: 0.7,
 });
 

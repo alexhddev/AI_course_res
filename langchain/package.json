@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/OutputParsers.ts"
+    "start": "node -r ts-node/register --env-file=.env src/rag/Pdf.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@langchain/community": "^0.3.12",
     "cheerio": "^1.0.0",
     "chromadb": "^1.9.2",
     "langchain": "^0.3.5",
