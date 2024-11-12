@@ -5,7 +5,7 @@ import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
 const model = new ChatOpenAI({
-    modelName: 'gpt-4o',
+    modelName: 'gpt-4o-mini',
     temperature: 0.7,
 });
 

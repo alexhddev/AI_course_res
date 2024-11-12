@@ -2,7 +2,7 @@ import { ChatOpenAI } from '@langchain/openai'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
 
 const model = new ChatOpenAI({
-    modelName: 'gpt-4o',
+    modelName: 'gpt-4o-mini',
     temperature: 0.7,
 })
 

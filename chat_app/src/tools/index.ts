@@ -29,7 +29,7 @@ async function callOpenAIWithTools() {
 
     // configure chat tools (first openAI call)
     const response = await openAI.chat.completions.create({
-        model: 'gpt-4o',
+        model: 'gpt-4o-mini',
         messages: context,
         tools: [
             {
@@ -90,7 +90,7 @@ async function callOpenAIWithTools() {
     }
 
     const secondResponse = await openAI.chat.completions.create({
-        model: 'gpt-4o',
+        model: 'gpt-4o-mini',
         messages: context
     })
     console.log(secondResponse.choices[0].message.content)

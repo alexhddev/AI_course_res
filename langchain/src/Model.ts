@@ -1,7 +1,7 @@
 import { ChatOpenAI } from '@langchain/openai'
 
 const model = new ChatOpenAI({
-    modelName: 'gpt-4o',
+    modelName: 'gpt-4o-mini',
     temperature: 0.8,
     maxTokens: 700,
     //verbose: true

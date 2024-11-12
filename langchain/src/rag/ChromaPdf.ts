@@ -5,7 +5,7 @@ import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
 import { Chroma } from '@langchain/community/vectorstores/chroma'
 
 const model = new ChatOpenAI({
-    modelName: 'gpt-4o',
+    modelName: 'gpt-4o-mini',
     temperature: 0.7,
 });
 

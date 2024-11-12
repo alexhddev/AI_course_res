@@ -5,7 +5,7 @@ const openai = new OpenAI()
 
 async function main(){
     const response = await openai.chat.completions.create({
-        model: 'gpt-4o',
+        model: 'gpt-4o-mini',
         messages:[{
             role: 'system',
             content: `You respond like a cool bro, and you respond in JSON format, like this:
@@ -22,7 +22,7 @@ async function main(){
 
 function encodePrompt(){
     const prompt = "How are you today?"
-    const encoder = encoding_for_model('gpt-4o');
+    const encoder = encoding_for_model('gpt-4o-mini');
     const words = encoder.encode(prompt);
     console.log(words)
 }
