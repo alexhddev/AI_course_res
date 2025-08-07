@@ -10,6 +10,8 @@ export type DataWithEmbeddings = {
 }
 
 export async function generateEmbeddings(input: string| string[]){
+    console.log('Input:')
+    console.log(JSON.stringify(input))
     const response = await openai.embeddings.create({
         input: input,
         model: 'text-embedding-3-small'
@@ -44,5 +46,5 @@ async function main(){
     saveDataToJsonFile(dataWithEmbeddings, 'dataWithEmbeddings2.json')
 }
 
-main();
+// main();
 
