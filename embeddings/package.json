@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx --env-file=.env src/emb/main.ts"
+    "start": "tsx --env-file=.env src/emb/project/MovieRecommender.ts"
   },
   "keywords": [],
   "author": "",

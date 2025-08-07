@@ -1,0 +1,26 @@
+[
+  {
+    "name": "The Shawshank Redemption",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+  },
+  {
+    "name": "The Godfather",
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+  },
+  {
+    "name": "The Dark Knight",
+    "description": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham."
+  },
+  {
+    "name": "Pulp Fiction",
+    "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+  },
+  {
+    "name": "Schindler's List",
+    "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis."
+  },
+  {
+    "name": "The Lord of the Rings: The Return of the King",
+    "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."
+  }
+]
