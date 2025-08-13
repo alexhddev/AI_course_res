@@ -1,7 +1,7 @@
-import { HfInference } from '@huggingface/inference'
+import { InferenceClient } from '@huggingface/inference'
 import { writeFile } from 'fs'
 
-const inference = new HfInference(
+const inference = new InferenceClient(
     process.env.HF_TOKEN
 )
 
@@ -25,9 +25,8 @@ async function translate() {
 
 async function translate2() {
     const result = await inference.translation({
-        model: 'facebook/nllb-200-distilled-600M',
+        model: 'google-t5/t5-base',
         inputs: 'How is the weather in Paris?',
-        //@ts-ignore
         parameters: {
             src_lang: 'eng-Latn',
             tgt_lang: 'spaa_Latn'
@@ -58,7 +57,7 @@ async function textToImage() {
         }
     });
 
-    const buffer = Buffer.from(await result.arrayBuffer());
+    const buffer = Buffer.from(result);
     writeFile('image.png', buffer, ()=>{
         console.log('image saved')
     })
@@ -66,4 +65,4 @@ async function textToImage() {
     
 }
 
-textToImage()
+translate2()

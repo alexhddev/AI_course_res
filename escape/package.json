@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node --loader ts-node/esm --no-warnings=ExperimentalWarning  --env-file=.env src/transformers.ts"
+    "start": "tsx  --env-file=.env src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,7 @@
     "@huggingface/inference": "^4.7.0",
     "@types/node": "^24.2.1",
     "@xenova/transformers": "^2.17.2",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.20.4",
     "typescript": "^5.9.2",
     "wavefile": "^11.0.0"
   }
